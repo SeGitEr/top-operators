@@ -1,0 +1,57 @@
+{
+  "contestName": "Конкурс операторов",
+  "subtitle": "Топ-10 недели",
+  "updatedAt": "2026-08-06",
+  "leaders": [
+    {
+      "place": 1,
+      "firstName": "Иван",
+      "lastName": "Петров"
+    },
+    {
+      "place": 2,
+      "firstName": "Мария",
+      "lastName": "Иванова"
+    },
+    {
+      "place": 3,
+      "firstName": "Алексей",
+      "lastName": "Смирнов"
+    },
+    {
+      "place": 4,
+      "firstName": "Елена",
+      "lastName": "Кузнецова"
+    },
+    {
+      "place": 5,
+      "firstName": "Дмитрий",
+      "lastName": "Соколов"
+    },
+    {
+      "place": 6,
+      "firstName": "Ольга",
+      "lastName": "Попова"
+    },
+    {
+      "place": 7,
+      "firstName": "Сергей",
+      "lastName": "Лебедев"
+    },
+    {
+      "place": 8,
+      "firstName": "Анна",
+      "lastName": "Козлова"
+    },
+    {
+      "place": 9,
+      "firstName": "Никита",
+      "lastName": "Новиков"
+    },
+    {
+      "place": 10,
+      "firstName": "Татьяна",
+      "lastName": "Морозова"
+    }
+  ]
+}
