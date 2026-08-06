@@ -1,58 +1,22 @@
 {
-  "contestName": "Конкурс операторов",
-  "subtitle": "Топ-10 недели",
   "weekLabel": "Неделя 1",
   "updatedAt": "2026-08-06",
-  "leaders": [
-    {
-      "place": 1,
-      "firstName": "Иван",
-      "lastName": "Петров"
-    },
-    {
-      "place": 2,
-      "firstName": "Мария",
-      "lastName": "Иванова"
-    },
-    {
-      "place": 3,
-      "firstName": "Алексей",
-      "lastName": "Смирнов"
-    },
-    {
-      "place": 4,
-      "firstName": "Елена",
-      "lastName": "Кузнецова"
-    },
-    {
-      "place": 5,
-      "firstName": "Дмитрий",
-      "lastName": "Соколов"
-    },
-    {
-      "place": 6,
-      "firstName": "Ольга",
-      "lastName": "Попова"
-    },
-    {
-      "place": 7,
-      "firstName": "Сергей",
-      "lastName": "Лебедев"
-    },
-    {
-      "place": 8,
-      "firstName": "Анна",
-      "lastName": "Козлова"
-    },
-    {
-      "place": 9,
-      "firstName": "Никита",
-      "lastName": "Новиков"
-    },
-    {
-      "place": 10,
-      "firstName": "Татьяна",
-      "lastName": "Морозова"
-    }
+  "hours": [
+    { "place": 1, "firstName": "Иван", "lastName": "Петров", "value": 164 },
+    { "place": 2, "firstName": "Мария", "lastName": "Иванова", "value": 158 },
+    { "place": 3, "firstName": "Алексей", "lastName": "Смирнов", "value": 151 },
+    { "place": 4, "firstName": "Елена", "lastName": "Кузнецова", "value": 147 },
+    { "place": 5, "firstName": "Дмитрий", "lastName": "Соколов", "value": 142 },
+    { "place": 6, "firstName": "Ольга", "lastName": "Попова", "value": 138 },
+    { "place": 7, "firstName": "Сергей", "lastName": "Лебедев", "value": 133 }
+  ],
+  "calls": [
+    { "place": 1, "firstName": "Анна", "lastName": "Козлова", "value": 1284 },
+    { "place": 2, "firstName": "Никита", "lastName": "Новиков", "value": 1210 },
+    { "place": 3, "firstName": "Татьяна", "lastName": "Морозова", "value": 1176 },
+    { "place": 4, "firstName": "Павел", "lastName": "Волков", "value": 1120 },
+    { "place": 5, "firstName": "Мария", "lastName": "Иванова", "value": 1085 },
+    { "place": 6, "firstName": "Иван", "lastName": "Петров", "value": 1042 },
+    { "place": 7, "firstName": "Елена", "lastName": "Кузнецова", "value": 998 }
   ]
 }
