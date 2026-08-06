@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Топ-10 операторов</title>
+  <title>Конкурс операторов — август</title>
 
   <style>
     :root {
@@ -19,79 +19,29 @@
       --green: #34d399;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
 
     body {
       min-height: 100vh;
       color: var(--text);
-      background:
-        radial-gradient(circle at top, #111827 0%, var(--bg) 36%);
+      background: radial-gradient(circle at top, #111827 0%, var(--bg) 36%);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       overflow-x: hidden;
     }
 
-    #fx {
-      position: fixed;
-      inset: 0;
-      z-index: 3;
-      pointer-events: none;
-    }
+    #fx { position: fixed; inset: 0; z-index: 3; pointer-events: none; }
 
-    .bg {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.5;
-      animation: float 20s ease-in-out infinite;
-    }
-
-    .orb-1 {
-      width: 560px;
-      height: 560px;
-      background: rgba(124, 58, 237, 0.34);
-      top: -180px;
-      left: -140px;
-    }
-
-    .orb-2 {
-      width: 460px;
-      height: 460px;
-      background: rgba(34, 211, 238, 0.26);
-      top: 16%;
-      right: -160px;
-      animation-delay: -5s;
-    }
-
-    .orb-3 {
-      width: 420px;
-      height: 420px;
-      background: rgba(255, 211, 77, 0.18);
-      bottom: -180px;
-      left: 26%;
-      animation-delay: -10s;
-    }
-
+    .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
+    .orb-1 { width: 560px; height: 560px; background: rgba(124, 58, 237, 0.34); top: -180px; left: -140px; }
+    .orb-2 { width: 460px; height: 460px; background: rgba(34, 211, 238, 0.26); top: 16%; right: -160px; animation-delay: -5s; }
+    .orb-3 { width: 420px; height: 420px; background: rgba(255, 211, 77, 0.18); bottom: -180px; left: 26%; animation-delay: -10s; }
     .grid-overlay {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
       background-size: 48px 48px;
       -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 80%);
       mask-image: radial-gradient(circle at center, black 0%, transparent 80%);
@@ -99,548 +49,235 @@
     }
 
     .shell {
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       width: min(1100px, calc(100% - 28px));
       margin: 0 auto;
       padding: 34px 0 70px;
       display: grid;
-      gap: 22px;
+      gap: 26px;
     }
 
+    /* ---------- HERO ---------- */
     .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 32px;
-      border-radius: 34px;
+      position: relative; overflow: hidden;
+      padding: 32px; border-radius: 34px;
       border: 1px solid var(--line);
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.11),
-        rgba(255, 255, 255, 0.05)
-      );
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+      background: linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.05));
+      box-shadow: 0 30px 90px rgba(0,0,0,0.42);
       backdrop-filter: blur(18px);
       animation: rise 0.7s both;
     }
-
     .hero::before {
-      content: "";
-      position: absolute;
-      inset: -50%;
-      background: conic-gradient(
-        from 0deg,
-        transparent 0 66%,
-        rgba(255, 255, 255, 0.18) 70%,
-        transparent 75%
-      );
+      content: ""; position: absolute; inset: -50%;
+      background: conic-gradient(from 0deg, transparent 0 66%, rgba(255,255,255,0.18) 70%, transparent 75%);
       animation: sweep 9s linear infinite;
-      opacity: 0.16;
-      pointer-events: none;
+      opacity: 0.16; pointer-events: none;
     }
-
-    .hero-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
-    }
-
+    .hero-top { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; position: relative; z-index: 1; }
+    .chips { display: flex; gap: 10px; flex-wrap: wrap; }
     .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 13px;
-      border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 13px; border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.07);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text);
+      background: rgba(255,255,255,0.07);
+      font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase;
     }
-
     .chip.accent {
-      border: none;
-      color: #06101d;
-      background: linear-gradient(
-        90deg,
-        var(--cyan),
-        var(--violet),
-        var(--gold)
-      );
+      border: none; color: #06101d;
+      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--gold));
       background-size: 180% auto;
       animation: shine 6s linear infinite;
     }
-
-    .date {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
+    .date { color: var(--muted); font-size: 14px; }
     h1 {
       margin: 20px 0 10px;
       font-size: clamp(36px, 6vw, 70px);
-      line-height: 1.02;
-      letter-spacing: -0.05em;
-      max-width: 14ch;
-      background: linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #b8e6ff 22%,
-        var(--gold) 46%,
-        #ffffff 68%,
-        var(--violet) 100%
-      );
+      line-height: 1.02; letter-spacing: -0.05em; max-width: 16ch;
+      background: linear-gradient(90deg, #ffffff 0%, #b8e6ff 22%, var(--gold) 46%, #ffffff 68%, var(--violet) 100%);
       background-size: 220% auto;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
       animation: shine 8s linear infinite;
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
     }
-
     @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
-      h1 {
-        background: none;
-        color: var(--text);
-      }
+      h1 { background: none; color: var(--text); }
+    }
+    #subtitle { margin: 0; color: var(--muted); font-size: 20px; position: relative; z-index: 1; }
+    .hero-line { position: relative; z-index: 1; height: 1px; margin-top: 26px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent); opacity: 0.28; }
+
+    /* ---------- БЛОКИ ---------- */
+    .block { display: grid; gap: 16px; }
+    .block-title {
+      margin: 0; font-size: clamp(22px, 3.4vw, 32px); letter-spacing: -0.03em;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .block-title::before {
+      content: ""; width: 34px; height: 10px; border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      box-shadow: 0 0 18px rgba(103,232,249,0.35);
     }
 
-    #subtitle {
-      margin: 0;
-      color: var(--muted);
-      font-size: 20px;
-      position: relative;
-      z-index: 1;
+    /* ---------- ПЛИТКИ ОПИСАНИЯ ---------- */
+    .tiles { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .tile {
+      padding: 18px; border-radius: 22px; border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05); backdrop-filter: blur(12px);
+      animation: rise 0.7s both;
     }
+    .tile .ico { font-size: 28px; }
+    .tile h3 { margin: 10px 0 6px; font-size: 16px; }
+    .tile p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 
-    .hero-line {
-      position: relative;
-      z-index: 1;
-      height: 1px;
-      margin-top: 26px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.55),
-        transparent
-      );
-      opacity: 0.28;
+    details.announce {
+      border-radius: 22px; border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04); padding: 6px 18px;
     }
+    details.announce summary { cursor: pointer; padding: 12px 4px; font-weight: 800; }
+    details.announce[open] summary { border-bottom: 1px solid var(--line); }
+    .announce-body { padding: 14px 4px 16px; color: var(--muted); line-height: 1.7; font-size: 15px; white-space: pre-line; }
 
-    .podium {
-      display: grid;
-      gap: 18px;
-      grid-template-columns: 1fr;
-    }
-
-    @media (min-width: 900px) {
-      .podium-3 {
-        grid-template-columns: 1fr 1.15fr 1fr;
-        align-items: end;
-      }
-
-      .rank-1 {
-        order: 2;
-        transform: translateY(-16px);
-        min-height: 285px;
-      }
-
-      .rank-2 {
-        order: 1;
-        min-height: 235px;
-      }
-
-      .rank-3 {
-        order: 3;
-        min-height: 225px;
-      }
-    }
-
-    .top-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 215px;
-      border-radius: 30px;
-      padding: 26px 22px;
-      display: grid;
-      justify-items: center;
-      align-content: center;
-      gap: 10px;
-      text-align: center;
+    /* ---------- НОМИНАЦИИ ---------- */
+    .noms { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+    .nom-card {
+      position: relative; overflow: hidden;
+      border-radius: 30px; padding: 26px;
       border: 1px solid var(--line);
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.10),
-        rgba(255, 255, 255, 0.05)
-      );
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
       backdrop-filter: blur(16px);
       animation: rise 0.7s both;
     }
+    .nom-card::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% -10%, var(--glow, transparent), transparent 60%);
+      pointer-events: none;
+    }
+    .nom-hours { --glow: rgba(255, 211, 77, 0.22); }
+    .nom-calls { --glow: rgba(103, 232, 249, 0.20); }
+    .nom-head { display: flex; align-items: center; gap: 14px; position: relative; z-index: 1; }
+    .nom-emoji { font-size: 44px; filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35)); }
+    .nom-title { margin: 0; font-size: 24px; font-weight: 900; letter-spacing: -0.02em; }
+    .nom-desc { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+    .prizes { display: grid; gap: 10px; margin-top: 18px; position: relative; z-index: 1; }
+    .prize {
+      display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 12px;
+      padding: 12px 14px; border-radius: 16px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--line);
+    }
+    .prize .medal { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; font-weight: 900; }
+    .prize-1 .medal { color: var(--gold); background: rgba(255,211,77,0.14); box-shadow: inset 0 0 0 1px rgba(255,211,77,0.35); }
+    .prize-2 .medal { color: var(--silver); background: rgba(219,228,242,0.12); box-shadow: inset 0 0 0 1px rgba(219,228,242,0.3); }
+    .prize-3 .medal { color: var(--bronze); background: rgba(255,157,92,0.12); box-shadow: inset 0 0 0 1px rgba(255,157,92,0.3); }
+    .prize .gift { color: var(--muted); font-size: 14px; }
+    .prize .sum { font-weight: 900; font-size: 16px; }
 
+    /* ---------- ЛИДЕРБОРДЫ ---------- */
+    .lb { display: grid; gap: 16px; }
+    .lb-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .lb-emoji { font-size: 34px; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.35)); }
+    .lb-head h3 { margin: 0; font-size: clamp(20px, 3vw, 26px); letter-spacing: -0.02em; }
+    .lb-note { color: var(--muted); font-size: 13px; width: 100%; }
+
+    .podium { display: grid; gap: 18px; grid-template-columns: 1fr; }
+    @media (min-width: 900px) {
+      .podium-3 { grid-template-columns: 1fr 1.15fr 1fr; align-items: end; }
+      .rank-1 { order: 2; transform: translateY(-16px); min-height: 265px; }
+      .rank-2 { order: 1; min-height: 225px; }
+      .rank-3 { order: 3; min-height: 215px; }
+    }
+
+    .top-card {
+      position: relative; overflow: hidden; min-height: 205px;
+      border-radius: 30px; padding: 26px 22px;
+      display: grid; justify-items: center; align-content: center; gap: 10px; text-align: center;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+      box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+      backdrop-filter: blur(16px);
+      animation: rise 0.7s both;
+    }
     .top-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at 50% -10%,
-        var(--glow, rgba(255, 255, 255, 0.22)),
-        transparent 55%
-      );
-      opacity: 0.35;
-      pointer-events: none;
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% -10%, var(--glow, rgba(255,255,255,0.22)), transparent 55%);
+      opacity: 0.35; pointer-events: none;
     }
-
-    .top-card::after {
-      content: "";
-      position: absolute;
-      inset: 1px;
-      border-radius: inherit;
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.14),
-        transparent 30%
-      );
-      opacity: 0.14;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .rank-1 {
-      --glow: rgba(255, 211, 77, 0.42);
-      border-color: rgba(255, 211, 77, 0.32);
-    }
-
-    .rank-2 {
-      --glow: rgba(219, 228, 242, 0.30);
-      border-color: rgba(219, 228, 242, 0.22);
-    }
-
-    .rank-3 {
-      --glow: rgba(255, 157, 92, 0.30);
-      border-color: rgba(255, 157, 92, 0.22);
-    }
-
+    .rank-1 { --glow: rgba(255,211,77,0.42); border-color: rgba(255,211,77,0.32); }
+    .rank-2 { --glow: rgba(219,228,242,0.30); border-color: rgba(219,228,242,0.22); }
+    .rank-3 { --glow: rgba(255,157,92,0.30); border-color: rgba(255,157,92,0.22); }
     .top-rank {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 15px;
-      font-weight: 900;
-      background: rgba(0, 0, 0, 0.18);
-      border: 1px solid var(--line);
-      z-index: 1;
+      position: absolute; top: 16px; left: 16px; width: 44px; height: 44px;
+      display: grid; place-items: center; border-radius: 15px; font-weight: 900;
+      background: rgba(0,0,0,0.18); border: 1px solid var(--line); z-index: 1;
     }
+    .top-medal, .top-name, .top-role, .top-score { position: relative; z-index: 1; }
+    .top-medal { font-size: 48px; line-height: 1; filter: drop-shadow(0 12px 20px rgba(0,0,0,0.3)); animation: bob 4s ease-in-out infinite; }
+    .top-name { font-size: 24px; font-weight: 900; letter-spacing: -0.03em; max-width: 16ch; }
+    .top-role { color: var(--muted); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em; }
+    .top-score { margin-top: 4px; padding: 8px 12px; border-radius: 999px; background: rgba(0,0,0,0.18); border: 1px solid var(--line); font-weight: 800; }
 
-    .top-medal,
-    .top-name,
-    .top-role,
-    .top-score {
-      position: relative;
-      z-index: 1;
-    }
-
-    .top-medal {
-      font-size: 52px;
-      line-height: 1;
-      filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.3));
-      animation: bob 4s ease-in-out infinite;
-    }
-
-    .top-name {
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      max-width: 16ch;
-    }
-
-    .top-role {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .top-score {
-      margin-top: 4px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.18);
-      border: 1px solid var(--line);
-      font-weight: 800;
-    }
-
-    .board {
-      display: grid;
-      gap: 12px;
-    }
-
+    .board { display: grid; gap: 12px; }
     .row {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 64px 1fr auto;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 18px;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.07),
-        rgba(255, 255, 255, 0.04)
-      );
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 64px 1fr auto; align-items: center; gap: 16px;
+      padding: 16px 18px; border-radius: 24px; border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
       backdrop-filter: blur(14px);
-      transition:
-        transform 0.22s ease,
-        border-color 0.22s ease,
-        background 0.22s ease,
-        box-shadow 0.22s ease;
+      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
       animation: rise 0.65s both;
     }
-
     .row::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 20%;
-      bottom: 20%;
-      width: 3px;
-      border-radius: 999px;
-      background: linear-gradient(
-        180deg,
-        var(--cyan),
-        var(--violet)
-      );
-      opacity: 0.65;
-      z-index: 0;
+      content: ""; position: absolute; left: 0; top: 20%; bottom: 20%; width: 3px; border-radius: 999px;
+      background: linear-gradient(180deg, var(--cyan), var(--violet));
+      opacity: 0.65; z-index: 0;
     }
-
     .row:hover {
       transform: translateY(-3px) scale(1.01);
-      border-color: rgba(255, 255, 255, 0.24);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.26);
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.10),
-        rgba(255, 255, 255, 0.06)
-      );
+      border-color: rgba(255,255,255,0.24);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.26);
     }
-
-    .rank,
-    .content,
-    .right,
-    .bar {
-      position: relative;
-      z-index: 1;
-    }
-
+    .rank, .content, .right, .bar { position: relative; z-index: 1; }
     .rank {
-      width: 56px;
-      height: 56px;
-      display: grid;
-      place-items: center;
-      border-radius: 18px;
-      font-weight: 900;
-      font-size: 20px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--line);
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+      width: 56px; height: 56px; display: grid; place-items: center; border-radius: 18px;
+      font-weight: 900; font-size: 20px;
+      background: rgba(255,255,255,0.08); border: 1px solid var(--line);
     }
-
-    .content {
-      min-width: 0;
-    }
-
-    .name {
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .meta {
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .right {
-      display: grid;
-      gap: 6px;
-      justify-items: end;
-    }
-
-    .score {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--line);
-      font-weight: 800;
-    }
-
-    .trend {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--green);
-    }
-
-    .trend.down {
-      color: #fb7185;
-    }
-
-    .bar {
-      grid-column: 1 / -1;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      overflow: hidden;
-    }
-
+    .content { min-width: 0; }
+    .name { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+    .meta { margin-top: 3px; color: var(--muted); font-size: 14px; }
+    .right { display: grid; gap: 6px; justify-items: end; }
+    .score { padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid var(--line); font-weight: 800; }
+    .bar { grid-column: 1 / -1; height: 8px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden; }
     .bar span {
-      display: block;
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(
-        90deg,
-        var(--cyan),
-        var(--violet),
-        var(--gold)
-      );
-      box-shadow: 0 0 18px rgba(103, 232, 249, 0.25);
+      display: block; height: 100%; border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--gold));
+      box-shadow: 0 0 18px rgba(103,232,249,0.25);
       animation: grow 1s ease both;
     }
 
-    .empty,
-    .error {
-      padding: 18px;
-      border: 1px dashed var(--line);
-      border-radius: 22px;
-      color: var(--muted);
-      background: rgba(255, 255, 255, 0.03);
-    }
+    .empty, .error { padding: 18px; border: 1px dashed var(--line); border-radius: 22px; color: var(--muted); background: rgba(255,255,255,0.03); }
+    .page-foot { color: var(--muted); font-size: 14px; text-align: center; }
+    code { color: var(--cyan); }
 
-    .page-foot {
-      color: var(--muted);
-      font-size: 14px;
-      text-align: center;
-    }
-
-    code {
-      color: var(--cyan);
-    }
-
-    @keyframes float {
-      0%,
-      100% {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      50% {
-        transform: translate3d(36px, -28px, 0) scale(1.08);
-      }
-    }
-
-    @keyframes shine {
-      to {
-        background-position: 220% center;
-      }
-    }
-
-    @keyframes sweep {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes rise {
-      from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.985);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    @keyframes bob {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-7px);
-      }
-    }
-
-    @keyframes grow {
-      from {
-        width: 0;
-      }
-    }
+    @keyframes float { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(36px,-28px,0) scale(1.08); } }
+    @keyframes shine { to { background-position: 220% center; } }
+    @keyframes sweep { to { transform: rotate(360deg); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(20px) scale(0.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @keyframes grow { from { width: 0; } }
 
     @media (max-width: 700px) {
-      .shell {
-        padding-top: 18px;
-      }
-
-      .hero {
-        padding: 22px;
-        border-radius: 26px;
-      }
-
-      .row {
-        grid-template-columns: 52px 1fr auto;
-        gap: 12px;
-        padding: 14px;
-      }
-
-      .rank {
-        width: 48px;
-        height: 48px;
-        font-size: 18px;
-      }
-
-      .name {
-        font-size: 17px;
-      }
-
-      .top-card {
-        min-height: 190px;
-        padding: 22px 18px;
-      }
-
-      .top-name {
-        font-size: 22px;
-      }
-
-      .top-medal {
-        font-size: 44px;
-      }
+      .shell { padding-top: 18px; }
+      .hero { padding: 22px; border-radius: 26px; }
+      .row { grid-template-columns: 52px 1fr auto; gap: 12px; padding: 14px; }
+      .rank { width: 48px; height: 48px; font-size: 18px; }
+      .name { font-size: 17px; }
+      .top-card { min-height: 185px; padding: 22px 18px; }
+      .top-name { font-size: 21px; }
+      .top-medal { font-size: 42px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation: none !important;
-        transition: none !important;
-      }
-
-      #fx {
-        display: none;
-      }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      #fx { display: none; }
     }
   </style>
 </head>
@@ -655,23 +292,136 @@
   </div>
 
   <main class="shell">
+
+    <!-- ШАПКА -->
     <section class="hero">
       <div class="hero-top">
-        <span class="chip accent" id="weekLabel">Рейтинг недели</span>
-        <span class="date">
-          Обновлено:
-          <time id="updatedAt">—</time>
-        </span>
+        <div class="chips">
+          <span class="chip accent">Август • на разогреве</span>
+          <span class="chip" id="weekLabel">Неделя 1</span>
+        </div>
+        <span class="date">Обновлено: <time id="updatedAt">—</time></span>
       </div>
 
-      <h1 id="contestName">Конкурс операторов</h1>
-      <p id="subtitle">Топ-10 недели</p>
+      <h1>Конкурс операторов</h1>
+      <p id="subtitle">2 номинации • в каждой по 3 призовых места</p>
 
       <div class="hero-line" aria-hidden="true"></div>
     </section>
 
-    <section id="podium" class="podium" aria-label="Топ-3"></section>
-    <section id="board" class="board" aria-label="Остальные места"></section>
+    <!-- ОПИСАНИЕ -->
+    <section class="block">
+      <h2 class="block-title">О конкурсе</h2>
+
+      <div class="tiles">
+        <div class="tile">
+          <div class="ico">🍃</div>
+          <h3>Осенний марафон скоро</h3>
+          <p>С сентября начнём осенний марафон и новую гонку для самых трудолюбивых и азартных. Август — конкурс «на разогрев».</p>
+        </div>
+        <div class="tile">
+          <div class="ico">🏆</div>
+          <h3>2 номинации</h3>
+          <p>В каждой по 3 призовых места: 1500 / 1000 / 500 рублей + личный презент.</p>
+        </div>
+        <div class="tile">
+          <div class="ico">⭐️</div>
+          <h3>Конверсия не ниже 1,5%</h3>
+          <p>Чтобы попасть в номинацию, удерживай конверсию от 1,5%. Работаем и на качество, и на количество.</p>
+        </div>
+        <div class="tile">
+          <div class="ico">📊</div>
+          <h3>Топ-7 каждую неделю</h3>
+          <p>Каждую неделю публикуем топ-7 операторов по каждому показателю — оценивай свои силы и шансы на выигрыш.</p>
+        </div>
+      </div>
+
+      <details class="announce">
+        <summary>📜 Читать полный анонс конкурса</summary>
+        <div class="announce-body">❗️ Итак.. На осень 🍃 я готовлю много всего интересного (надеюсь) для вас, и с сентября мы начнём осенний марафон и новую гонку для всех самых трудолюбивых и азартных 🎰
+А пока августовский конкурс «на разогрев» 🙂
+
+2 номинации. В каждой по 3 призовых места.
+
+Номинация 1: «Кручусь верчусь» 🛞
+Вознаграждение предусмотрено для 3 операторов, которые выработали максимальное количество продуктивных часов за август 👍
+1 место: 1500 рублей + личный презент
+2 место: 1000 рублей + личный презент
+3 место: 500 рублей + личный презент
+
+Номинация 2: «Позвони мне, позвони» 📞
+Вознаграждение предусмотрено для 3 операторов, которые совершили максимальное количество звонков за август 👍
+1 место: 1500 рублей + личный презент
+2 место: 1000 рублей + личный презент
+3 место: 500 рублей + личный презент
+
+🔝 Важное условие: для того чтобы попасть в номинацию, важно удерживать процент своей конверсии не менее 1,5% ⭐️
+А это значит, что мы работаем в совокупности как на качество, так и на количество 👏
+
+❗️ Каждую неделю буду публиковать данные топ-7 операторов по вышеперечисленным показателям, для того чтобы вы могли оценить свои силы и шансы на выигрыш по итогам месяца 🔝
+
+Всем успехов 😉</div>
+      </details>
+    </section>
+
+    <!-- НОМИНАЦИИ И ПРИЗЫ -->
+    <section class="block">
+      <h2 class="block-title">Номинации и призы</h2>
+
+      <div class="noms">
+        <article class="nom-card nom-hours">
+          <div class="nom-head">
+            <span class="nom-emoji">🛞</span>
+            <div>
+              <h3 class="nom-title">Кручусь верчусь</h3>
+              <p class="nom-desc">Максимальное количество продуктивных часов за август</p>
+            </div>
+          </div>
+          <div class="prizes">
+            <div class="prize prize-1"><span class="medal">1</span><span class="gift">+ личный презент</span><span class="sum">1 500 ₽</span></div>
+            <div class="prize prize-2"><span class="medal">2</span><span class="gift">+ личный презент</span><span class="sum">1 000 ₽</span></div>
+            <div class="prize prize-3"><span class="medal">3</span><span class="gift">+ личный презент</span><span class="sum">500 ₽</span></div>
+          </div>
+        </article>
+
+        <article class="nom-card nom-calls">
+          <div class="nom-head">
+            <span class="nom-emoji">📞</span>
+            <div>
+              <h3 class="nom-title">Позвони мне, позвони</h3>
+              <p class="nom-desc">Максимальное количество звонков за август</p>
+            </div>
+          </div>
+          <div class="prizes">
+            <div class="prize prize-1"><span class="medal">1</span><span class="gift">+ личный презент</span><span class="sum">1 500 ₽</span></div>
+            <div class="prize prize-2"><span class="medal">2</span><span class="gift">+ личный презент</span><span class="sum">1 000 ₽</span></div>
+            <div class="prize prize-3"><span class="medal">3</span><span class="gift">+ личный презент</span><span class="sum">500 ₽</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ЛИДЕРБОРД: ЧАСЫ -->
+    <section class="lb">
+      <div class="lb-head">
+        <span class="lb-emoji">🛞</span>
+        <h3>Кручусь верчусь</h3>
+        <span class="lb-note">Продуктивные часы • топ-7 недели</span>
+      </div>
+      <div class="podium" id="podium-hours"></div>
+      <div class="board" id="board-hours"></div>
+    </section>
+
+    <!-- ЛИДЕРБОРД: ЗВОНКИ -->
+    <section class="lb">
+      <div class="lb-head">
+        <span class="lb-emoji">📞</span>
+        <h3>Позвони мне, позвони</h3>
+        <span class="lb-note">Звонки • топ-7 недели</span>
+      </div>
+      <div class="podium" id="podium-calls"></div>
+      <div class="board" id="board-calls"></div>
+    </section>
 
     <footer class="page-foot">
       Данные обновляются в файле <code>data/leaders.json</code>.
@@ -681,36 +431,17 @@
   <script>
     const fx = document.getElementById("fx");
     const ctx = fx.getContext("2d");
-
     let particles = [];
     let confettiRunning = false;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    function resizeFx() {
-      fx.width = window.innerWidth;
-      fx.height = window.innerHeight;
-    }
-
+    function resizeFx() { fx.width = window.innerWidth; fx.height = window.innerHeight; }
     window.addEventListener("resize", resizeFx);
     resizeFx();
 
     function confettiBurst(count = 180) {
-      if (reduceMotion) {
-        return;
-      }
-
-      const colors = [
-        "#ffd34d",
-        "#67e8f9",
-        "#a78bfa",
-        "#34d399",
-        "#fb7185",
-        "#ffffff"
-      ];
-
+      if (reduceMotion) return;
+      const colors = ["#ffd34d", "#67e8f9", "#a78bfa", "#34d399", "#fb7185", "#ffffff"];
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * fx.width,
@@ -725,38 +456,21 @@
           opacity: 0.95
         });
       }
-
       startConfetti();
     }
 
     function startConfetti() {
-      if (reduceMotion || confettiRunning) {
-        return;
-      }
-
+      if (reduceMotion || confettiRunning) return;
       confettiRunning = true;
       requestAnimationFrame(confettiLoop);
     }
 
     function confettiLoop() {
-      if (!ctx) {
-        confettiRunning = false;
-        return;
-      }
-
+      if (!ctx) { confettiRunning = false; return; }
       ctx.clearRect(0, 0, fx.width, fx.height);
-
-      particles = particles.filter(
-        (p) => p.y < fx.height + 50 && p.opacity > 0
-      );
-
+      particles = particles.filter((p) => p.y < fx.height + 50 && p.opacity > 0);
       for (const p of particles) {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.rotate += p.spin;
-        p.vy += 0.045;
-        p.opacity -= 0.0018;
-
+        p.x += p.vx; p.y += p.vy; p.rotate += p.spin; p.vy += 0.045; p.opacity -= 0.0018;
         ctx.save();
         ctx.translate(p.x, p.y);
         ctx.rotate(p.rotate);
@@ -765,73 +479,36 @@
         ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
         ctx.restore();
       }
-
-      if (particles.length > 0) {
-        requestAnimationFrame(confettiLoop);
-      } else {
-        confettiRunning = false;
-        ctx.clearRect(0, 0, fx.width, fx.height);
-      }
+      if (particles.length > 0) requestAnimationFrame(confettiLoop);
+      else { confettiRunning = false; ctx.clearRect(0, 0, fx.width, fx.height); }
     }
 
     function fullName(leader) {
-      return [leader.firstName, leader.lastName]
-        .filter(Boolean)
-        .join(" ")
-        .trim() || "Участник без имени";
+      return [leader.firstName, leader.lastName].filter(Boolean).join(" ").trim() || "Участник без имени";
     }
 
     function formatDate(value) {
-      if (!value) {
-        return "—";
-      }
-
+      if (!value) return "—";
       const isoDate = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
-
       if (isoDate) {
         const [, year, month, day] = isoDate;
-
-        return new Date(
-          Number(year),
-          Number(month) - 1,
-          Number(day)
-        ).toLocaleDateString("ru-RU", {
-          day: "numeric",
-          month: "long",
-          year: "numeric"
-        });
+        return new Date(Number(year), Number(month) - 1, Number(day)).toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" });
       }
-
       const date = new Date(value);
-
-      if (Number.isNaN(date.getTime())) {
-        return String(value);
-      }
-
-      return date.toLocaleDateString("ru-RU", {
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-      });
+      return Number.isNaN(date.getTime()) ? String(value) : date.toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" });
     }
 
-    function toNumber(value) {
-      const n = Number(value);
-      return Number.isFinite(n) ? n : 0;
-    }
+    function toNumber(value) { const n = Number(value); return Number.isFinite(n) ? n : 0; }
+    function hasValue(value) { return value != null && String(value).trim() !== ""; }
 
-    function hasValue(value) {
-      return value != null && String(value).trim() !== "";
-    }
+    const BOARDS = [
+      { key: "hours", unit: "ч", meta: "Продуктивные часы • август", podiumId: "podium-hours", boardId: "board-hours" },
+      { key: "calls", unit: "звонков", meta: "Звонки • август", podiumId: "podium-calls", boardId: "board-calls" }
+    ];
 
-    function createTopCard(leader, index) {
-      const medals = ["👑", "🥈", "🥉"];
-      const roles = [
-        "Лидер недели",
-        "Серебро недели",
-        "Бронза недели"
-      ];
-
+    function createTopCard(leader, index, unit) {
+      const medals = ["👑", "🥈", ""];
+      const roles = ["Лидер недели", "Серебро недели", "Бронза недели"];
       const card = document.createElement("article");
       card.className = "top-card rank-" + (index + 1);
       card.style.animationDelay = index * 90 + "ms";
@@ -854,17 +531,16 @@
 
       card.append(rank, medal, name, role);
 
-      if (hasValue(leader.score)) {
+      if (hasValue(leader.value)) {
         const score = document.createElement("div");
         score.className = "top-score";
-        score.textContent = leader.score + " баллов";
+        score.textContent = leader.value + " " + unit;
         card.appendChild(score);
       }
-
       return card;
     }
 
-    function createRow(leader, index, maxScore) {
+    function createRow(leader, index, maxValue, cfg) {
       const row = document.createElement("article");
       row.className = "row";
       row.style.animationDelay = 240 + index * 70 + "ms";
@@ -882,148 +558,92 @@
 
       const meta = document.createElement("div");
       meta.className = "meta";
-      meta.textContent =
-        leader.department ||
-        leader.note ||
-        "Оператор";
+      meta.textContent = cfg.meta;
 
       content.append(name, meta);
 
       const right = document.createElement("div");
       right.className = "right";
-
-      if (hasValue(leader.score)) {
+      if (hasValue(leader.value)) {
         const score = document.createElement("div");
         score.className = "score";
-        score.textContent = leader.score;
+        score.textContent = leader.value + " " + cfg.unit;
         right.appendChild(score);
       }
 
-      if (hasValue(leader.trend)) {
-        const trend = document.createElement("div");
-        const trendText = String(leader.trend).trim();
-
-        trend.className =
-          "trend" + (trendText.startsWith("-") ? " down" : "");
-
-        trend.textContent = trendText;
-        right.appendChild(trend);
-      }
-
       row.append(rank, content);
+      if (right.childElementCount > 0) row.appendChild(right);
 
-      if (right.childElementCount > 0) {
-        row.appendChild(right);
-      }
-
-      const scoreNumber = toNumber(leader.score);
-
-      if (hasValue(leader.score) && scoreNumber > 0 && maxScore > 0) {
+      const v = toNumber(leader.value);
+      if (hasValue(leader.value) && v > 0 && maxValue > 0) {
         const bar = document.createElement("div");
         bar.className = "bar";
-
         const fill = document.createElement("span");
-        const percent = Math.max(
-          8,
-          Math.min(100, Math.round((scoreNumber / maxScore) * 100))
-        );
-
+        const percent = Math.max(8, Math.min(100, Math.round((v / maxValue) * 100)));
         fill.style.width = percent + "%";
         bar.appendChild(fill);
         row.appendChild(bar);
       }
-
       return row;
     }
 
+    function renderBoard(cfg, leaders) {
+      const podium = document.getElementById(cfg.podiumId);
+      const board = document.getElementById(cfg.boardId);
+      podium.innerHTML = "";
+      board.innerHTML = "";
+
+      if (!leaders.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "Пока нет данных по этой номинации.";
+        board.appendChild(empty);
+        return;
+      }
+
+      const top3 = leaders.slice(0, 3);
+      const rest = leaders.slice(3, 7);
+
+      podium.classList.toggle("podium-3", top3.length === 3);
+
+      const maxValue = Math.max(0, ...leaders.map((l) => toNumber(l.value)));
+
+      top3.forEach((leader, i) => podium.appendChild(createTopCard(leader, i, cfg.unit)));
+      rest.forEach((leader, i) => board.appendChild(createRow(leader, i, maxValue, cfg)));
+    }
+
     async function loadLeaders() {
-      const podium = document.getElementById("podium");
-      const board = document.getElementById("board");
-
       try {
-        const response = await fetch(
-          "data/leaders.json?updated=" + Date.now(),
-          { cache: "no-store" }
-        );
-
-        if (!response.ok) {
-          throw new Error("HTTP " + response.status);
-        }
-
+        const response = await fetch("data/leaders.json?updated=" + Date.now(), { cache: "no-store" });
+        if (!response.ok) throw new Error("HTTP " + response.status);
         const data = await response.json();
 
-        document.title = data.contestName || document.title;
+        document.getElementById("weekLabel").textContent = data.weekLabel || "Неделя 1";
+        document.getElementById("updatedAt").textContent = formatDate(data.updatedAt);
 
-        document.getElementById("contestName").textContent =
-          data.contestName || "Конкурс операторов";
-
-        document.getElementById("subtitle").textContent =
-          data.subtitle || "Топ-10 недели";
-
-        document.getElementById("weekLabel").textContent =
-          data.weekLabel || "Рейтинг недели";
-
-        document.getElementById("updatedAt").textContent =
-          formatDate(data.updatedAt);
-
-        let leaders = (Array.isArray(data.leaders) ? data.leaders : []).map(
-          (leader, index) => {
-            const parsedPlace = Number(leader.place);
-
-            return {
-              ...leader,
-              place:
-                Number.isInteger(parsedPlace) && parsedPlace > 0
-                  ? parsedPlace
-                  : index + 1
-            };
-          }
-        );
-
-        leaders.sort((a, b) => a.place - b.place);
-        leaders = leaders.slice(0, 10);
-
-        podium.innerHTML = "";
-        board.innerHTML = "";
-
-        if (leaders.length === 0) {
-          const empty = document.createElement("div");
-          empty.className = "empty";
-          empty.textContent =
-            "Пока нет участников. Добавьте имена в data/leaders.json.";
-          board.appendChild(empty);
-          return;
-        }
-
-        const top3 = leaders.slice(0, 3);
-        const rest = leaders.slice(3, 10);
-
-        podium.classList.toggle("podium-3", top3.length === 3);
-
-        const maxScore = Math.max(
-          0,
-          ...leaders.map((leader) => toNumber(leader.score))
-        );
-
-        top3.forEach((leader, index) => {
-          podium.appendChild(createTopCard(leader, index));
-        });
-
-        rest.forEach((leader, index) => {
-          board.appendChild(createRow(leader, index, maxScore));
+        BOARDS.forEach((cfg) => {
+          const raw = Array.isArray(data[cfg.key]) ? data[cfg.key] : [];
+          const leaders = raw
+            .map((leader, index) => {
+              const parsedPlace = Number(leader.place);
+              return { ...leader, place: Number.isInteger(parsedPlace) && parsedPlace > 0 ? parsedPlace : index + 1 };
+            })
+            .sort((a, b) => a.place - b.place)
+            .slice(0, 7);
+          renderBoard(cfg, leaders);
         });
 
         confettiBurst(180);
       } catch (error) {
-        podium.innerHTML = "";
-        board.innerHTML = "";
-
-        const errorBox = document.createElement("div");
-        errorBox.className = "error";
-        errorBox.textContent =
-          "Не удалось загрузить список. Проверьте файл data/leaders.json и формат JSON.";
-
-        board.appendChild(errorBox);
+        BOARDS.forEach((cfg) => {
+          document.getElementById(cfg.podiumId).innerHTML = "";
+          const board = document.getElementById(cfg.boardId);
+          board.innerHTML = "";
+          const err = document.createElement("div");
+          err.className = "error";
+          err.textContent = "Не удалось загрузить данные. Проверьте файл data/leaders.json.";
+          board.appendChild(err);
+        });
         console.error(error);
       }
     }
