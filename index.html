@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Топ-10 операторов</title>
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: rgba(255, 255, 255, 0.06);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --line: rgba(148, 163, 184, 0.2);
+      --accent: #7dd3fc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, #172033 0%, var(--bg) 45%);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .card {
+      width: min(760px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.08;
+    }
+
+    #subtitle {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .updated {
+      margin: 14px 0 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .board {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      align-items: center;
+      gap: 14px;
+      padding: 13px 15px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .place {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      font-weight: 800;
+      font-size: 18px;
+      background: rgba(148, 163, 184, 0.14);
+    }
+
+    .name {
+      font-weight: 700;
+      font-size: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    .place-1 .place {
+      color: #fbbf24;
+      background: rgba(251, 191, 36, 0.14);
+      box-shadow: inset 0 0 0 1px rgba(251, 191, 36, 0.4);
+    }
+
+    .place-2 .place {
+      color: #e5e7eb;
+      background: rgba(229, 231, 235, 0.12);
+      box-shadow: inset 0 0 0 1px rgba(229, 231, 235, 0.3);
+    }
+
+    .place-3 .place {
+      color: #fb923c;
+      background: rgba(251, 146, 60, 0.12);
+      box-shadow: inset 0 0 0 1px rgba(251, 146, 60, 0.3);
+    }
+
+    .empty,
+    .error {
+      margin: 0;
+      padding: 14px 16px;
+      border: 1px dashed var(--line);
+      border-radius: 16px;
+      color: var(--muted);
+    }
+
+    .hint {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    code {
+      color: var(--accent);
+    }
+
+    @media (max-width: 560px) {
+      .card {
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .row {
+        grid-template-columns: 44px 1fr;
+        gap: 12px;
+        padding: 11px 12px;
+      }
+
+      .place {
+        width: 44px;
+        height: 44px;
+        border-radius: 13px;
+      }
+
+      .name {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="badge">Конкурс</span>
+
+    <h1 id="contestName">Конкурс операторов</h1>
+    <p id="subtitle">Топ-10 недели</p>
+
+    <p class="updated">
+      Обновлено:
+      <time id="updatedAt">—</time>
+    </p>
+
+    <ol id="board" class="board" aria-live="polite"></ol>
+
+    <footer class="hint">
+      Данные редактируются в файле <code>data/leaders.json</code>.
+    </footer>
+  </main>
+
+  <script>
+    const board = document.getElementById("board");
+
+    function formatDate(value) {
+      if (!value) {
+        return "—";
+      }
+
+      const isoDate = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+
+      if (isoDate) {
+        const [, year, month, day] = isoDate;
+
+        return new Date(
+          Number(year),
+          Number(month) - 1,
+          Number(day)
+        ).toLocaleDateString("ru-RU", {
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        });
+      }
+
+      const date = new Date(value);
+
+      if (Number.isNaN(date.getTime())) {
+        return String(value);
+      }
+
+      return date.toLocaleDateString("ru-RU", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+    }
+
+    async function loadLeaders() {
+      try {
+        const response = await fetch(
+          "data/leaders.json?updated=" + Date.now(),
+          { cache: "no-store" }
+        );
+
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+
+        const data = await response.json();
+
+        document.title = data.contestName || document.title;
+        document.getElementById("contestName").textContent =
+          data.contestName || "Конкурс операторов";
+        document.getElementById("subtitle").textContent =
+          data.subtitle || "Топ-10 недели";
+        document.getElementById("updatedAt").textContent =
+          formatDate(data.updatedAt);
+
+        let leaders = (Array.isArray(data.leaders) ? data.leaders : []).map(
+          (leader, index) => {
+            const parsedPlace = Number(leader.place);
+
+            return {
+              ...leader,
+              place:
+                Number.isInteger(parsedPlace) && parsedPlace > 0
+                  ? parsedPlace
+                  : index + 1
+            };
+          }
+        );
+
+        leaders.sort((a, b) => a.place - b.place);
+        leaders = leaders.slice(0, 10);
+
+        board.innerHTML = "";
+
+        if (leaders.length === 0) {
+          const li = document.createElement("li");
+          li.className = "empty";
+          li.textContent =
+            "Пока нет участников. Добавьте имена в data/leaders.json.";
+          board.appendChild(li);
+          return;
+        }
+
+        for (const leader of leaders) {
+          const li = document.createElement("li");
+          li.className = "row place-" + leader.place;
+
+          const place = document.createElement("span");
+          place.className = "place";
+          place.textContent = leader.place;
+
+          const name = document.createElement("span");
+          name.className = "name";
+
+          const fullName = [leader.firstName, leader.lastName]
+            .filter(Boolean)
+            .join(" ")
+            .trim();
+
+          name.textContent = fullName || "Участник без имени";
+
+          li.appendChild(place);
+          li.appendChild(name);
+          board.appendChild(li);
+        }
+      } catch (error) {
+        board.innerHTML = "";
+
+        const li = document.createElement("li");
+        li.className = "error";
+        li.textContent =
+          "Не удалось загрузить список. Проверьте файл data/leaders.json и формат JSON.";
+
+        board.appendChild(li);
+        console.error(error);
+      }
+    }
+
+    loadLeaders();
+  </script>
+</body>
+</html>
