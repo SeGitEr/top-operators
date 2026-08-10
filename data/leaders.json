@@ -2,21 +2,21 @@
   "weekLabel": "Неделя 1",
   "updatedAt": "2026-08-06",
   "hours": [
-    { "place": 1, "firstName": "Иван", "lastName": "Петров", "value": 164 },
-    { "place": 2, "firstName": "Мария", "lastName": "Иванова", "value": 158 },
-    { "place": 3, "firstName": "Алексей", "lastName": "Смирнов", "value": 151 },
-    { "place": 4, "firstName": "Елена", "lastName": "Кузнецова", "value": 147 },
-    { "place": 5, "firstName": "Дмитрий", "lastName": "Соколов", "value": 142 },
-    { "place": 6, "firstName": "Ольга", "lastName": "Попова", "value": 138 },
-    { "place": 7, "firstName": "Сергей", "lastName": "Лебедев", "value": 133 }
+    { "place": 1, "firstName": "Кристина", "lastName": "Бутасова", "value": 40:32 },
+    { "place": 2, "firstName": "Дмитрий", "lastName": "Полев", "value": 38:27 },
+    { "place": 3, "firstName": "Александра", "lastName": "Пивоварова", "value": 24:46 },
+    { "place": 4, "firstName": "Анастасия", "lastName": "Бушуева", "value": 23:02 },
+    { "place": 5, "firstName": "Лилия", "lastName": "Шайдакова", "value": 14:43 },
+    { "place": 6, "firstName": "Илья", "lastName": "Смирнов", "value": 13:02 },
+    { "place": 7, "firstName": "Ждёт", "lastName": "Своего героя", "value": 0 }
   ],
   "calls": [
-    { "place": 1, "firstName": "Анна", "lastName": "Козлова", "value": 1284 },
-    { "place": 2, "firstName": "Никита", "lastName": "Новиков", "value": 1210 },
-    { "place": 3, "firstName": "Татьяна", "lastName": "Морозова", "value": 1176 },
-    { "place": 4, "firstName": "Павел", "lastName": "Волков", "value": 1120 },
-    { "place": 5, "firstName": "Мария", "lastName": "Иванова", "value": 1085 },
-    { "place": 6, "firstName": "Иван", "lastName": "Петров", "value": 1042 },
-    { "place": 7, "firstName": "Елена", "lastName": "Кузнецова", "value": 998 }
+    { "place": 1, "firstName": "Кристина", "lastName": "Бутасова", "value": 1996 },
+    { "place": 2, "firstName": "Дмитрий", "lastName": "Полев", "value": 1928 },
+    { "place": 3, "firstName": "Александра", "lastName": "Пивоварова", "value": 1407 },
+    { "place": 4, "firstName": "Анастасия", "lastName": "Бушуева", "value": 1111 },
+    { "place": 5, "firstName": "Илья", "lastName": "Смирнов", "value": 656 },
+    { "place": 6, "firstName": "Лилия", "lastName": "Шайдакова", "value": 1042 },
+    { "place": 7, "firstName": "Ждёт", "lastName": "Своего героя", "value": 0 }
   ]
 }
