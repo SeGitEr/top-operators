@@ -179,12 +179,34 @@
     .lb-note { color: var(--muted); font-size: 13px; width: 100%; }
 
     .podium { display: grid; gap: 18px; grid-template-columns: 1fr; }
-    @media (min-width: 900px) {
-      .podium-3 { grid-template-columns: 1fr 1.15fr 1fr; align-items: end; }
-      .rank-1 { order: 2; transform: translateY(-16px); min-height: 265px; }
-      .rank-2 { order: 1; min-height: 225px; }
-      .rank-3 { order: 3; min-height: 215px; }
-    }
+   @media (min-width: 900px) {
+  .podium-3 {
+    grid-template-columns: 1fr 1.15fr 1fr;
+    align-items: end;
+  }
+
+  /* резервируем две строки под имя, чтобы длинная фамилия
+     не растягивала карточку выше соседей */
+  .top-name {
+    min-height: 3em;
+  }
+
+  .rank-1 {
+    order: 2;
+    transform: translateY(-18px);
+    min-height: 300px;
+  }
+
+  .rank-2 {
+    order: 1;
+    min-height: 250px;
+  }
+
+  .rank-3 {
+    order: 3;
+    min-height: 230px;
+  }
+}
 
     .top-card {
       position: relative; overflow: hidden; min-height: 205px;
