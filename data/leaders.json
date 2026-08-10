@@ -2,12 +2,12 @@
   "weekLabel": "Неделя 1",
   "updatedAt": "2026-08-06",
   "hours": [
-    { "place": 1, "firstName": "Кристина", "lastName": "Бутасова", "value": 40:32 },
-    { "place": 2, "firstName": "Дмитрий", "lastName": "Полев", "value": 38:27 },
-    { "place": 3, "firstName": "Александра", "lastName": "Пивоварова", "value": 24:46 },
-    { "place": 4, "firstName": "Анастасия", "lastName": "Бушуева", "value": 23:02 },
-    { "place": 5, "firstName": "Лилия", "lastName": "Шайдакова", "value": 14:43 },
-    { "place": 6, "firstName": "Илья", "lastName": "Смирнов", "value": 13:02 },
+    { "place": 1, "firstName": "Кристина", "lastName": "Бутасова", "value": 40 },
+    { "place": 2, "firstName": "Дмитрий", "lastName": "Полев", "value": 38 },
+    { "place": 3, "firstName": "Александра", "lastName": "Пивоварова", "value": 24 },
+    { "place": 4, "firstName": "Анастасия", "lastName": "Бушуева", "value": 23 },
+    { "place": 5, "firstName": "Лилия", "lastName": "Шайдакова", "value": 14 },
+    { "place": 6, "firstName": "Илья", "lastName": "Смирнов", "value": 13 },
     { "place": 7, "firstName": "Ждёт", "lastName": "Своего героя", "value": 0 }
   ],
   "calls": [
