@@ -2,21 +2,21 @@
   "weekLabel": "Неделя 1",
   "updatedAt": "2026-08-06",
   "hours": [
-    { "place": 1, "firstName": "Кристина", "lastName": "Бутасова", "value": 40 },
-    { "place": 2, "firstName": "Дмитрий", "lastName": "Полев", "value": 38 },
-    { "place": 3, "firstName": "Александра", "lastName": "Пивоварова", "value": 24 },
-    { "place": 4, "firstName": "Анастасия", "lastName": "Бушуева", "value": 23 },
-    { "place": 5, "firstName": "Лилия", "lastName": "Шайдакова", "value": 14 },
-    { "place": 6, "firstName": "Илья", "lastName": "Смирнов", "value": 13 },
+    { "place": 1, "firstName": "Кристина", "lastName": "Бутасова", "value": 89 },
+    { "place": 2, "firstName": "Дмитрий", "lastName": "Полев", "value": 88 },
+    { "place": 3, "firstName": "Сергей", "lastName": "Субботин", "value": 47 },
+    { "place": 4, "firstName": "Анастасия", "lastName": "Бушуева", "value": 43 },
+    { "place": 5, "firstName": "Ждёт", "lastName": "Своего героя", "value": 0 },
+    { "place": 6, "firstName": "Ждёт", "lastName": "Своего героя", "value": 0 },
     { "place": 7, "firstName": "Ждёт", "lastName": "Своего героя", "value": 0 }
   ],
   "calls": [
-    { "place": 1, "firstName": "Кристина", "lastName": "Бутасова", "value": 1996 },
-    { "place": 2, "firstName": "Дмитрий", "lastName": "Полев", "value": 1928 },
-    { "place": 3, "firstName": "Александра", "lastName": "Пивоварова", "value": 1407 },
-    { "place": 4, "firstName": "Анастасия", "lastName": "Бушуева", "value": 1111 },
-    { "place": 5, "firstName": "Илья", "lastName": "Смирнов", "value": 656 },
-    { "place": 6, "firstName": "Лилия", "lastName": "Шайдакова", "value": 638 },
+    { "place": 1, "firstName": "Дмитрий", "lastName": "Полев", "value": 6499 },
+    { "place": 2, "firstName": "Кристина", "lastName": "Бутасова", "value": 5718 },
+    { "place": 3, "firstName": "Сергей", "lastName": "Субботинг", "value": 3813 },
+    { "place": 4, "firstName": "Анастасия", "lastName": "Бушуева", "value": 2576 },
+    { "place": 5, "firstName": "Ждёт", "lastName": "Своего героя", "value": 0 },
+    { "place": 6, "firstName": "Ждёт", "lastName": "Своего героя", "value": 0 },
     { "place": 7, "firstName": "Ждёт", "lastName": "Своего героя", "value": 0 }
   ]
 }
